@@ -25,7 +25,10 @@ const userSchema = new mongoose.Schema({
 });
 
 const secret = process.env.SECRET;
-userSchema.plugin(encrypt, { secret: secret, encryptedFields: ["password"] });
+userSchema.plugin(encrypt, {
+  secret: "simplefornow",
+  encryptedFields: ["password"],
+});
 
 //Setting up DB Model
 const User = new mongoose.model("user", userSchema);
@@ -68,6 +71,8 @@ app.post("/login", function (req, res) {
       if (foundUser) {
         if (foundUser.password === password) {
           res.render("secrets");
+        } else {
+          res.redirect("register");
         }
       }
     }
