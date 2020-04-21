@@ -33,9 +33,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
-mongoose.connect("mongodb://ds127802.mlab.com:27802/heroku_mc06n6mn", {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://user1:t810072!@dev-cluster1-ya41o.azure.mongodb.net/test?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+  }
+);
 mongoose.set("useCreateIndex", true);
 //Setting up DB Schema
 const userSchema = new mongoose.Schema({
