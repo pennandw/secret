@@ -50,6 +50,7 @@ const userSchema = new mongoose.Schema({
   githubUsername: String,
   secret: String,
   username: String,
+  displayName: String,
   // provider: String,
 });
 
@@ -84,7 +85,7 @@ passport.use(
     function (accessToken, refreshToken, profile, cb) {
       console.log(profile);
       User.findOrCreate(
-        { googleId: profile.id, username: profile.displayName },
+        { username: profile.id, displayName: profile.displayName },
         function (err, user) {
           return cb(err, user);
         }
