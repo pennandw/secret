@@ -34,7 +34,7 @@ app.use(passport.session());
 
 //mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
 mongoose.connect(
-  "mongodb+srv://t810072:t810072!@dev-cluster1-ya41o.azure.mongodb.net/userDB",
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWD}@dev-cluster1-ya41o.azure.mongodb.net/userDB",
   {
     useUnifiedTopology: true,
     useNewUrlParser: true,
