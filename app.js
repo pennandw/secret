@@ -34,7 +34,7 @@ app.use(passport.session());
 
 //mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
 mongoose.connect(
-  "mongodb+srv://user1:t810072!@dev-cluster1-ya41o.azure.mongodb.net/test?retryWrites=true&w=majority",
+  "mongodb+srv://t810072:t810072!@dev-cluster1-ya41o.azure.mongodb.net/userDB",
   {
     useNewUrlParser: true,
   }
