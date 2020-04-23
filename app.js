@@ -33,8 +33,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
+//heroku db connect string
 mongoose.connect(
-  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWD}@dev-cluster1-ya41o.azure.mongodb.net/userDB"`,
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWD}@dev-cluster1-ya41o.azure.mongodb.net/userDB`,
   {
     useUnifiedTopology: true,
     useNewUrlParser: true,
